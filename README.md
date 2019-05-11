@@ -1,4 +1,4 @@
-Teste para desenvolvedor do Online Quadros
+Teste para desenvolvedor da Online Quadros
 ==============================
 
 Olá candidato,
