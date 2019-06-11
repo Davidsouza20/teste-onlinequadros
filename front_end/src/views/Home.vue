@@ -32,7 +32,7 @@ export default {
     },
     //Add a Car 
     addCar(newCar) {
-      newCar.id = this.cars.length +1
+      //newCar.id = this.cars.length +1
       const car = newCar;
       axios.post('https://my-json-server.typicode.com/davidsouza20/api/cars', {car})
         .then(res => this.cars = [...this.cars, res.data])

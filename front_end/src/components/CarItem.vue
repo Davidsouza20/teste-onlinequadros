@@ -1,7 +1,7 @@
 <template>
   <div class="todo-item">
     <p>{{car.modelo}}, {{car.id_marca}}, {{car.year}}
-      <button @click="$emit('del-car', car.id)" class="btn btn-danger btn-sm pull-right margin red">x</button>
+      <button  @click="$emit('del-car', car.id)" class="btn btn-danger btn-sm pull-right margin red">x</button>
       <button @click="$emit('edit-car', car.id)" class="btn btn-warning btn-sm pull-right margin yellow">Edit</button>
       </p>
   </div>
