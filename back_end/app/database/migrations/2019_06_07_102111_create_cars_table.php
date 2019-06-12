@@ -15,11 +15,9 @@ class CreateCarsTable extends Migration {
 		Schema::create('cars', function($table)
 		{
 			$table->increments('id');
-			$table->integer('id_marca')->unsigned();	
+			$table->string('marca');	
 			$table->string('modelo');
 			$table->integer('year');	
-			
-			$table->foreign('id_marca')->references('id')->on('marcas');
 		});
 	}
 

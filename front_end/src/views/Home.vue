@@ -25,16 +25,18 @@ export default {
   //Ajax calls to the API
   methods: {
     //Delete a Car 
-    deleteCar(id) {
-      axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
-        .then(res => this.cars = this.cars.filter(car => car.id !== id))
+    deleteCar(id, i) {
+      axios.delete(`http://localhost:8000/carros/${id}`)
+        .then(res => {this.cars.splice(i, 1)})
+        
+        /*this.cars = this.cars.filter(car => car.id !== id))*/
         .catch(err => console.log(err));
     },
     //Add a Car 
     addCar(newCar) {
       //newCar.id = this.cars.length +1
       const car = newCar;
-      axios.post('https://my-json-server.typicode.com/davidsouza20/api/cars', {car})
+      axios.post('http://localhost:8000/carros', {car})
         .then(res => this.cars = [...this.cars, res.data])
         .catch(err => console.log(err));
     },

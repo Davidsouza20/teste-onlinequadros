@@ -4,7 +4,7 @@
     <form class="form-group align-content-center" @submit.prevent="addCar">
       <label for="">Escolha a marca</label>
       <select class="form-control" v-model="marca">
-      <option :value="brand.marca" :key="brand.marca" v-for="brand in brands">{{brand.marca}}</option>
+        <option :value="brand.marca" :key="brand.id" v-for="brand in brands">{{brand.marca}}</option>
       </select><br>
       <input class="form-control" type="text" v-model="modelo" name="title" placeholder="Modelo"><br>
       <input class="form-control" type="text" v-model="ano" name="title" placeholder="Ano"><br>
@@ -23,20 +23,14 @@ export default {
         marca: "",
         modelo: "",
         ano: "",
-        brands: [
-          {marca: "Toyota"},
-          {marca:  "Honda"},
-          {marca:  "Ford"},
-          {marca:  "Fiat"},
-          {marca:  "Chevrolet"} 
-          ]
-    }  
+        brands: []
+        } 
   },
   methods: {
-    addTodo(e) {
+    addCar(e) {
       e.preventDefault();
       const newCar = {
-        id: this.id,
+        //id: this.id,
         marca: this.marca,
         modelo: this.modelo,
         ano: this.ano,
@@ -48,7 +42,15 @@ export default {
       this.modelo = ""
       this.ano = ""
     },
+    },
+    mounted() {
+     //get the brands 
+      axios.get('https://my-json-server.typicode.com/davidsouza20/api1/brand')
+      .then(res => this.brands = res.data)
+      
+      .catch(err => console.log(err));
   }
+ 
   }
 </script>
 <style scoped>
