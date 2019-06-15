@@ -13,7 +13,19 @@
 
 App::before(function($request)
 {
-	//
+	// Enable CORS 
+    // In production, replace * with http://yourdomain.com 
+    header("Access-Control-Allow-Origin: *");
+    header('Access-Control-Allow-Credentials: true');
+
+    if (Request::getMethod() == "OPTIONS") {
+        // The client-side application can set only headers allowed in Access-Control-Allow-Headers
+        $headers = [
+            'Access-Control-Allow-Methods'=> 'POST, GET, OPTIONS, PUT, DELETE',
+			'Access-Control-Allow-Headers'=> 'X-Requested-With, DNT, Content-Type, Mx-ReqToken, Keep-Alive,  X-Auth-Token, Origin, Authorization, Accept User-Agent, X-Requested-With, If-Modified-Since,Cache-Control'
+        ];
+        return Response::make('You are connected to the API', 200, $headers);
+    }
 });
 
 
@@ -35,7 +47,7 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if (Auth::guest())
+	/*if (Auth::guest())
 	{
 		if (Request::ajax())
 		{
@@ -45,7 +57,7 @@ Route::filter('auth', function()
 		{
 			return Redirect::guest('login');
 		}
-	}
+	}*/
 });
 
 

@@ -11,9 +11,11 @@
 |
 */
 
-header("Access-Control-Allow-Origin: http://localhost:8080");
-header("Access-Control-Allow-Methods: GET, POST, DELETE, PUT, OPTIONS");
-header('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token, Authorization');
+/*header('Access-Control-Allow-Methods'=> 'POST, GET, OPTIONS, PUT, DELETE',*/
+
+
+
+header('Access-Control-Request-Headers, Origin, Content-Type, X-Auth-Token, Authorization, Accept');
 
 Route::get('/carros', ['uses' => 'CarsController@getAllCars']);
 

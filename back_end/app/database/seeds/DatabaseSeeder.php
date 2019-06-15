@@ -8,8 +8,19 @@ class DatabaseSeeder extends Seeder {
 	 * @return void
 	 */
 	public function run()
-	{
-		Eloquent::unguard();
+	{	
+		for ($i = 0; $i < 15; $i++)	{
+		DB::table('carros')->insert([
+            'marca' => Str::random(10),
+            'modelo' => Str::random(10),
+			'year' => 2019,
+		
+        ]);}
+		
+		
+		
+		
+		//Eloquent::unguard();
 
 		// $this->call('UserTableSeeder');
 	}

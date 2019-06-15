@@ -25,7 +25,7 @@ class CarsController extends \BaseController {
 		if(!$carro) {
 			return Response::json(['response' => 'Carro não encontrado'], 400);
 		}
-		return Response::json(['response' => 'Carro atualizado com sucesso!'], 200);
+		return Response::json(['response' => $carro ], 200);
 	}
 
 	public function deleteCar($id) {
@@ -35,7 +35,6 @@ class CarsController extends \BaseController {
 		}
 		return Response::json(['response' => 'Carro removido com sucesso!'], 200);
 	}
-
 
 }
 

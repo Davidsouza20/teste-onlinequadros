@@ -23,7 +23,7 @@ class Carro extends Eloquent
         $carro = new Carro();
         $carro->fill($input);
         $carro->save();
-        return $carro;  
+        return $carro; 
     }
 
     public static function updateCarro($id) {
