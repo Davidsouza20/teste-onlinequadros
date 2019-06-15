@@ -1,4 +1,4 @@
-﻿Olá 
+
 
 Para iniciar esta web app 
 =========================================
@@ -6,7 +6,12 @@ Para iniciar esta web app
 
 
 1  "npm install".
+
+
 2  "npm update". 
+
+
+
 3  "npm run serve.
 
 
@@ -35,7 +40,14 @@ Certifique-se de que a porta é a 8000, pois as chamadas foram configuradas para
 
 
 1  "php artisan composer install"
+
+
+
 2  É necessário ter um banco de dados MySql chamado carros.
+
+
 3 "php artisan migrate" 
+
+
 4 "php artisan serve" 
  
